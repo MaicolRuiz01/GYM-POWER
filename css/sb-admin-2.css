@@ -4482,7 +4482,7 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-
+/*
 .card {
   position: relative;
   display: flex;
@@ -4715,6 +4715,7 @@ input[type="button"].btn-block {
   border-radius: 0;
   margin-bottom: -1px;
 }
+*/
 
 .breadcrumb {
   display: flex;
@@ -9744,9 +9745,10 @@ a.text-dark:hover, a.text-dark:focus {
   body {
     min-width: 992px !important;
   }
+  /*
   .container {
     min-width: 992px !important;
-  }
+  }*/
   .navbar {
     display: none;
   }

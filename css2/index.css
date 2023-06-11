@@ -1,0 +1,35 @@
+.card{
+  margin: 1rem;
+
+}
+  
+  
+  
+  @media (max-width: 600px) {
+    .card {
+      width: 100%; /* En dispositivos más pequeños, cada tarjeta ocupa todo el ancho */
+    }
+  }
+
+  .card button{
+    margin-left: 80%;
+    border-radius: 42%;
+    background: none;
+    color: blue;
+  }
+
+  .small-image {
+    
+    max-width: 100%; /* Establece el ancho deseado */
+    height: auto; /* Mantiene la proporción original */
+    display: block; /* Cambia la imagen a un elemento de bloque */
+    margin: 0 auto; /* Establece márgenes automáticos horizontalmente */
+    
+}
+@media (max-width: 767px) {
+    .small-image {
+       
+        width: 30%; /* La imagen ocupa el 50% del ancho del contenedor en pantallas pequeñas */
+    }
+}
+

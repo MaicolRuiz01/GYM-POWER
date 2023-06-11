@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>GymPower</title>
+    <link rel="icon" type="image/svg+xml" href="../img/icono.png" />
 
     <!-- el icono-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css2/index.css">
 
 </head>
 
@@ -31,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand/ barra azul-->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="panel.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -75,13 +77,11 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Perfil</span>
-                </a>
+            
+                
+               
+
+                
                 
             </li>
 
@@ -275,7 +275,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="panel.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -302,14 +302,94 @@
 
                 <!-- Begin Page Content/aqui va el contenido -->
                 <div class="container">
-
-                    
-                      
-                      
-
-                    
-
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <!-- Lado izquierdo con fondo azul -->
+                                    <div class="col-md-4 bg-primary" id="azul">
+                                        <div class="d-flex align-items-center h-100">
+                                            
+                                            <img src="../img/volumen.png" alt="Imagen" class="small-image img-fluid">
+                                        </div>
+                                    </div>
+                
+                                    <!-- Lado derecho con contenido -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Volumen</h5>
+                                            <p class="card-text">
+                                                el plan de ejercicio de volumen se centra en el desarrollo y aumento de la masa muscular. Se realiza a través de ejercicios de levantamiento de pesas o entrenamiento de fuerza, utilizando repeticiones y series específicas con cargas adecuadas.
+                                                 </p>
+                                            <a href="./planes/volumen.html">
+                                            <button class="btn btn-primary">Ir</button>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer bg-primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <!-- Lado izquierdo con fondo azul -->
+                                    <div class="col-md-4 bg-primary">
+                                        <div class="d-flex align-items-center h-100">
+                                            <img src="../img/cardio.png" alt="Imagen" class="small-image img-fluid">
+                                        </div>
+                                    </div>
+                
+                                    <!-- Lado derecho con contenido -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Cardio</h5>
+                                            <p class="card-text">
+                                                El plan de ejercicio de cardio se enfoca en mejorar la salud cardiovascular y la resistencia aeróbica.
+                                                 Incluye actividades como correr, nadar, andar en bicicleta, saltar la cuerda, entre otros.</p>
+                                                 <a href="./planes/cardio.html">
+                                                    <button class="btn btn-primary">Ir</button>
+                                                    </a>
+                                        </div>
+                                        <div class="card-footer bg-primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <!-- Lado izquierdo con fondo azul -->
+                                    <div class="col-md-4 bg-primary">
+                                        <div class="d-flex align-items-center h-100">
+                                            <img src="../img/libre.png" alt="Imagen" class="small-image img-fluid">
+                                        </div>
+                                    </div>
+                
+                                    <!-- Lado derecho con contenido -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Libre</h5>
+                                            <p class="card-text">
+                                                Un plan de ejercicios libre es aquel en el que puedes elegir 
+                                                diferentes actividades y ejercicios según tus preferencias y objetivos</p>
+                                                <a href="./planes/libre.html">
+                                                    <button class="btn btn-primary">Ir</button>
+                                                    </a>
+                                        </div>
+                                        <div class="card-footer bg-primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                
+                
+                
                 <!-- /.container-fluid -->
 
             </div>

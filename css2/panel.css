@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+  
+  .content {
+    flex: 2;
+  }
+  
+  #user-photo {
+    width: 200px;
+    height: auto;
+  }
+  
+  /* Estilos adicionales según tus preferencias */
+  
