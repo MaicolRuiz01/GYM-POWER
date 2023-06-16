@@ -1,17 +1,17 @@
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the form from submitting and refreshing the page
   
-    var codigo = document.getElementById("codigo").value;
+    var correo = document.getElementById("correo").value;
     var password = document.getElementById("password").value;
   
     // Construct the request payload
     var payload = {
-      codigo: codigo,
+      correo: correo,
       password: password
     };
   
     // Perform the API request
-    fetch("http://localhost:8080/login", {
+    fetch("http://localhost:8080/clientes/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
