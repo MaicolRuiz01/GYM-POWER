@@ -19,7 +19,7 @@ document.getElementById('register-form').addEventListener('submit', function(eve
       contraseña: contraseña
     };
   
-    fetch('URL_DE_LA_API_DE_REGISTRO', {
+    fetch('http://localhost:8080/clientes/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
