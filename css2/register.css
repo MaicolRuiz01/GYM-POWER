@@ -1,23 +1,26 @@
 body {
     background-color: #EEF4F9;
     background-image: url("../img/fondologin.png");
+    
+    
 }
+
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+   
 }
 
 .login-container {
-    width: 90%;
-    max-width: 500px; /* Limita el ancho máximo para dispositivos grandes */
+    
+    width: 50%;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Añade un margen para dispositivos pequeños */
+    
 }
 
 #cont {
@@ -27,14 +30,6 @@ body {
     color: #fff;
     margin-bottom: 9%;
     border-radius: 4px;
-   
 }
 
-.btn{
-    margin-bottom: 3rem;
-}
 
-a {
-    display: flex;
-    justify-content: center;
-}

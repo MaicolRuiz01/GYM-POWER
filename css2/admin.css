@@ -1,8 +1,61 @@
-#contenedor{
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de 2 píxeles de desplazamiento horizontal y vertical, 4 píxeles de desenfoque y color de sombra con transparencia */
-    background: #ffffff;
-}
 
-.h2{
-    margin: 5rem;
-}
+
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 3rem;
+    
+  }
+  
+  .card:hover {
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+  }
+  
+  
+  
+  .card-title {
+    font-size: 24px;
+    justify-content: start;
+  }
+  
+  .card-body{
+    color: #fff;
+    background-color: #0066cc;
+    padding: 30px;
+    
+  }
+  i {
+    float: right;
+  }
+  
+  
+  
+  
+  .card-link:hover {
+    text-decoration: none;
+    
+  }
+  .card-footer {
+    background-color: #003366;
+    
+    color: #fff;
+  
+  }
+  .card-footer a{
+    
+    background-color: transparent;
+    color: inherit; /* Mantiene el color original del texto */
+    text-decoration: none; /* Quita la subrayado por defecto */
+  
+  }
+
+  .fa-solid{
+  
+    color: #dc3545;
+  
+  }
+
+  
+  
+  

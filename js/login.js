@@ -1,37 +1,39 @@
-class Login {
-    constructor() {
-      this.loginForm = document.getElementById('login-form');
-      this.loginForm.addEventListener('submit', this.login.bind(this));
-    }
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
   
-    login(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+    var codigo = document.getElementById("codigo").value;
+    var password = document.getElementById("password").value;
   
-      const data = {
-        username: username,
-        password: password
-      };
+    // Construct the request payload
+    var payload = {
+      codigo: codigo,
+      password: password
+    };
   
-      fetch('URL_DE_LA_API_DE_LOGIN', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(result => {
-        // Manejar la respuesta de la API
-        console.log(result);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    }
-  }
+    // Perform the API request
+    fetch("http://localhost:8080/generate-token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Error de inicio de sesión. Verifica tus credenciales.");
+      }
+    })
+    .then(function(data) {
+      // Store the token in localStorage
+      localStorage.setItem("token", data.token);
   
-  const login = new Login();
-
-
+      // Redirect to dashboard.html
+      window.location.href = "../admin/admin.html";
+    })
+    .catch(function(error) {
+      // Handle failed login
+      document.getElementById("message").innerHTML = error.message;
+    });
+  });
