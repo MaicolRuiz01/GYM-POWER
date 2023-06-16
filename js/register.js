@@ -1,49 +1,50 @@
-// Función para registrar un nuevo usuario
-function registrarUsuario() {
-    // Obtener los valores de los campos del formulario
-    var nombre = document.getElementById('nombre').value;
-    var apellidos = document.getElementById('apellidos').value;
-    var cedula = document.getElementById('cedula').value;
-    var genero = document.getElementById('genero').value;
-    var edad = document.getElementById('edad').value;
-    var correo = document.getElementById('correo').value;
-    var contraseña = document.getElementById('contraseña').value;
-
-    // Crear el objeto de usuario con los valores
-    var usuario = {
-        nombre: nombre,
-        apellidos: apellidos,
-        cedula: cedula,
-        genero: genero,
-        edad: edad,
-        correo: correo,
-        contraseña: contraseña
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const cedula = document.getElementById('cedula').value;
+    const genero = document.getElementById('genero').value;
+    const edad = document.getElementById('edad').value;
+    const correo = document.getElementById('correo').value;
+    const contraseña = document.getElementById('contraseña').value;
+  
+    const data = {
+      nombre: nombre,
+      apellidos: apellidos,
+      cedula: cedula,
+      genero: genero,
+      edad: edad,
+      correo: correo,
+      contraseña: contraseña
     };
-
-    // Realizar la petición POST a la API REST para registrar el usuario
-    fetch('https://api.example.com/usuarios', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(usuario)
+  
+    fetch('URL_DE_LA_API_DE_REGISTRO', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
-        // Manejar la respuesta de la API
-        console.log(data); // Aquí puedes hacer algo con la respuesta, como mostrar un mensaje de éxito
-    })
-    .catch(error => {
-        // Manejar el error en caso de que la petición falle
-        console.error('Error:', error);
-    });
-}
-
-// Obtener el formulario de registro
-var registerForm = document.getElementById('register-form');
-
-// Agregar el evento de envío del formulario
-registerForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe por defecto
-    registrarUsuario(); // Llamar a la función para registrar el usuario
-});
+    .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Ha ocurrido un error, intente mas tarde");
+        }
+      })
+    .then(function(data) {
+        // Manejar el inicio de sesión exitoso
+        console.log("Inicio de sesión exitoso");
+        // Redirigir a la página de dashboard o realizar cualquier otra acción necesaria
+        window.location.href = "../cliente/index.html";
+      })
+      .catch(function(error) {
+        // Manejar el inicio de sesión fallido
+        console.error("Error de inicio de sesión:", error);
+        // Mostrar el mensaje de error en el formulario
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.innerHTML = error.message;
+      });
+  });
+  

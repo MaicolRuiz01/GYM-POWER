@@ -11,7 +11,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
   };
 
   // Realizar la solicitud API
-  fetch("http://localhost:8080/clientes/login", {
+  fetch("http://localhost:8080/entrenadores/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
