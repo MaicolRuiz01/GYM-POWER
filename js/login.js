@@ -11,7 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     };
   
     // Perform the API request
-    fetch("http://localhost:8080/generate-token", {
+    fetch("http://localhost:8080/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
