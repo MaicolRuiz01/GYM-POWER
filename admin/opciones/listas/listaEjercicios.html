@@ -10,23 +10,24 @@
     <meta name="author" content="">
 
     <title>GymPower</title>
-    <link rel="icon" type="image/svg+xml" href="../../img/icono.png" />
+    <link rel="icon" type="image/svg+xml" href="../../../img/icono.png" />
 
     <!-- el icono-->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
-   
+    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css2/listaherrramienta.css">
+    
   
     
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="listarEjercicios();">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -35,7 +36,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand/ barra azul-->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="panel.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../panel.html">
                 <div class="sidebar-brand-icon">
                     <i class="bi bi-person-circle"></i>
                 </div>
@@ -49,7 +50,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../admin.html">
+                <a class="nav-link" href="../../admin.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Casa</span></a>
             </li>
@@ -72,11 +73,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tipos de Opciones:</h6>
-                        <a class="collapse-item" href="buttons.html"></a>
-                        <a class="collapse-item" href="rutina.html">Crear Rutina</a>
-                        <a class="collapse-item" href="clientes.html">Ver Clientes</a>
-                        <a class="collapse-item" href="ejercicio.html">Ingresar Ejercicios</a>
-                        <a class="collapse-item" href="herramienta.html">Registrar Herramientas</a>
+                        <a class="collapse-item" href="../buttons.html"></a>
+                        <a class="collapse-item" href="../rutina.html">Crear Rutina</a>
+                        <a class="collapse-item" href="../clientes.html">Ver Clientes</a>
+                        <a class="collapse-item" href="../ejercicio.html">Ingresar Ejercicios</a>
+                        <a class="collapse-item" href="../herramienta.html">Registrar Herramientas</a>
                     </div>
                 </div>
             </li>
@@ -273,7 +274,7 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <p id="nombreUsuario"></p>
                                 </span>
-                                <img class="img-profile rounded-circle" src="../../img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="../../../img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -304,29 +305,56 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content/aqui va el contenido -->
+                
                 <div class="container" id="contenedor">
-
-                    <div id="mensaje"></div>
-                    <!-- /.container-ca -->
-
-                    <div class="register-container">
-                        <h1>Registro de Herramienta</h1>
-                        <form id="register-form">
-                            <div class="form-group">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    
+                    <div class="container">
+                        <h1>Listado de Ejercicios</h1>
+                        
+                    
+                        <!-- Contenedor de los ejercicios -->
+                        <div id="contenedor-ejercicios"></div>
+                    
+                        <!-- Modal de Modificar Ejercicio -->
+                        <div class="modal fade" id="modal-modificar" tabindex="-1" role="dialog" aria-labelledby="modal-modificar-label"
+                          aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modal-modificar-label">Modificar Ejercicio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group">
+                                  <label for="nombre-modificar">Nombre:</label>
+                                  <input type="text" class="form-control" id="nombre-modificar">
+                                </div>
+                                <div class="form-group">
+                                  <label for="descripcion-modificar">Descripción:</label>
+                                  <input type="text" class="form-control" id="descripcion-modificar">
+                                </div>
+                                <div class="form-group">
+                                  <label for="link-modificar">Link de YouTube:</label>
+                                  <input type="text" class="form-control" id="link-modificar">
+                                </div>
+                                <div class="form-group">
+                                  <label for="repeticiones-modificar">Repeticiones:</label>
+                                  <input type="number" class="form-control" id="repeticiones-modificar">
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="actualizar-ejercicio">Actualizar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                              </div>
                             </div>
-                            <div class="form-group">
-                                <label for="descripcion">Descripción:</label>
-                                <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
-                            </div>
-                            <button type="button" onclick="registrarHerramienta()" class="btn btn-primary">Registrar</button>
-                        </form>
-                        <a class="btn btn-outline-success" href="./listas/listarHerramientas.html" role="button" style="margin-top: 2rem">Ver Herramientas</a>
+                          </div>
+                        </div>
+                      </div>
+                          
                     </div>
                 </div>
-
-
             </div>
             <!-- End of Main Content -->
 
@@ -365,31 +393,31 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../../login.html">Salir</a>
+                    <a class="btn btn-primary" href="../../../login.html">Salir</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
+    <script src="../../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../vendor/chart.js/Chart.min.js"></script>
+    <script src="../../../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../js/demo/chart-area-demo.js"></script>
-    <script src="../../js/demo/chart-pie-demo.js"></script>
-    <script src="../../js/Admin/herrramienta.js"></script>
-    <script src="../../js/Admin/principal.js"></script>
+    <script src="../../../js/demo/chart-area-demo.js"></script>
+    <script src="../../../js/demo/chart-pie-demo.js"></script>
+    <script src="../../../js/Admin/listaEjercicios.js"></script>
+    <script src="../../../js/Admin/principal.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

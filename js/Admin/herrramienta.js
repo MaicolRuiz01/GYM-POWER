@@ -1,5 +1,5 @@
 
-const urlBackend = "http://localhost:8080"
+
 
 function registrarHerramienta(){
 
@@ -16,7 +16,7 @@ function registrarHerramienta(){
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
-        swal("Good job!", "You clicked the button!", "success")
+        swal("Se ha guardado", "Se guardo la herramienta exitosamente!", "success")
         limpiarCampos();
     })
     .catch(error=>{

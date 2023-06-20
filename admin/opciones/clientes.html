@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="obtenerUsuarios()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -301,7 +301,11 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content/aqui va el contenido -->
-                <div class="container">
+                <h1 class="text-center" style="padding-bottom: 2rem;">Lista de Clientes</h1>
+                <div class="container" id="contenedor-usuarios">
+
+
+
                     <!-- /.container-ca -->
                 </div>
 
@@ -367,6 +371,7 @@
     <!-- Page level custom scripts -->
     <script src="../../js/demo/chart-area-demo.js"></script>
     <script src="../../js/demo/chart-pie-demo.js"></script>
+    <script src="../../js/Admin/cliente.js"></script>
     
     <script src="../../js/Admin/principal.js"></script>
 </body>
