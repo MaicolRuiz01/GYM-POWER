@@ -50,7 +50,7 @@ async function listaHerramientas(){
 
     const result=await fetch(urlBackend+"/herramientas",{
         method: 'GET',
-        Headers: {
+        headers: {
             "Content-type":"application/json"
         }
     })
