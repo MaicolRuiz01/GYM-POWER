@@ -16,6 +16,8 @@ function registrarHerramienta(){
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
+        swal("Good job!", "You clicked the button!", "success")
+        limpiarCampos();
     })
     .catch(error=>{
         console.log(error)
@@ -32,4 +34,8 @@ async function guardarHerramienta(herramienta){
     })
     return result
 }
+function limpiarCampos() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("descripcion").value = "";
+  }
 
