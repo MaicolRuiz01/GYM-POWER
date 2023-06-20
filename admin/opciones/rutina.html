@@ -25,7 +25,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="llamarListaPlanes()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -308,21 +308,20 @@
                     <h1>Registro de Rutina de Ejercicio</h1>
                     <form id="rutinaForm">
                         <div>
-                            <label for="nombre">Nombre de la Rutina:</label>
+                            <label for="titulo">Nombre de la Rutina:</label>
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
-                        <div>
-                            <label for="descripcion">Descripción:</label>
-                            <textarea id="descripcion" name="descripcion" required></textarea>
-                        </div>
-                        <div>
-                            <label for="tiempo">Tiempo (minutos):</label>
-                            <input type="number" id="tiempo" name="tiempo" required>
-                        </div>
+                        
+                       
                         <div>
                             <label for="ejercicios">Ejercicios:</label>
                             <select id="ejercicios" name="ejercicios" multiple required></select>
                         </div>
+                        <div class="form-group">
+                            <label for="planes">Planes de Entrenamiento</label>
+                            <div id="planes">
+                                
+                            </div>
                         <div>
                             <button type="button" onclick="limpiarCampos()">Limpiar Campos</button>
                             <button type="submit">Registrar Rutina</button>
@@ -392,7 +391,8 @@
     <!-- Page level custom scripts -->
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
-    <script src="../js/rutina.js"></script>
+    <script src="../js/Admin/rutina.js"></script>
+    <script src="../js/Admin/principal.js"></script>
 
 </body>
 
